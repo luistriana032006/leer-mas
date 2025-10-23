@@ -5,7 +5,7 @@ import org.springframework.stereotype.Component;
 import com.devsenior.luistriana.leer_mas.model.generoLiterario;
 
 @Component
-public class libro {
+public class Libro {
     // atributos de la clase libro
     private String isbn;
     private String titulo;
@@ -18,12 +18,12 @@ public class libro {
     private Boolean disponible = true;
 
     // construtor vacio
-    public libro() {
+    public Libro() {
 
     }
     // construtor normal 
     
-    public libro(String isbn, String titulo, generoLiterario genero, int añoPublicacion, int numeroPaginas,
+    public Libro(String isbn, String titulo, generoLiterario genero, int añoPublicacion, int numeroPaginas,
             double precio, Boolean disponible) {
         this.isbn = isbn;
         this.titulo = titulo;
@@ -97,4 +97,30 @@ public class libro {
         this.disponible = disponible;
     }
 
+    // equals y hashcode
+
+    @Override
+    public boolean equals (Object o){
+  //1. VERIFICAR SI ES EL MISMO OBJETO EN MEMORIA (optimizacion)
+    if (this ==o) return true;
+
+    //2. verificar si el objeto es null o de otra clase
+     if (o == null || getClass()!=o.getClass()) return false;
+
+     // 3. hace el cast a libr (ya sabemos que es un libro por la linea anterior)
+     Libro libro = (Libro) o;
+
+     //4. comparar los ISBN: dos libros son iguales si tienen el mismo isbn 
+
+     return isbn != null && isbn.equals(libro.isbn);
+    }
+
+    // hash code 
+
+    @Override 
+    public int hashCode(){
+        return isbn != null ? isbn.hashCode() : 0;
+    }
+
+    
 }
