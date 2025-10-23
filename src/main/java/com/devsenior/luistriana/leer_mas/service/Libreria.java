@@ -20,5 +20,5 @@ public interface Libreria {
   void actualizarLibro(Libro libro);
 
   // eliminar un libro
-  void elimnarLibro(String isbn);
+  void eliminarLibro(Libro libro);
 }
