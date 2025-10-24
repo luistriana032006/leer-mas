@@ -1,0 +1,22 @@
+### peticiones
+
+### peticion 1- ver todos los libros
+GET http://localhost:8080/api/libreria/libros
+
+### peticion 2- ver libro por isbn
+GET http://localhost:8080/api/libreria/libro/ABCDEFGH123
+
+### peticion 3- agregar un nuevo libro
+POST http://localhost:8080/api/libreria/nuevolibro
+Content-Type: application/json
+
+{
+  "isbn": "ABCDEFGH123",
+  "titulo": "Don Quijote de la Mancha",
+  "genero": "FICCION",
+  "añoPublicacion": 1991,
+  "numeroPaginas": 863,
+  "precio": 45000,
+  "disponible": true
+}
+
