@@ -1,6 +1,6 @@
 package com.devsenior.luistriana.leer_mas.model;
 
-public enum generoLiterario {
+public enum GeneroLiterario {
 FICCION,
 NO_FICCION,
 CIENCIA,

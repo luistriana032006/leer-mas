@@ -2,19 +2,33 @@ package com.devsenior.luistriana.leer_mas.model.entity;
 
 import org.springframework.stereotype.Component;
 
-import com.devsenior.luistriana.leer_mas.model.generoLiterario;
+import com.devsenior.luistriana.leer_mas.model.GeneroLiterario;
+
+import jakarta.validation.constraints.Min;
+import jakarta.validation.constraints.NotBlank;
+import jakarta.validation.constraints.NotNull;
 
 @Component
 public class Libro {
     // atributos de la clase libro
+    @NotBlank(message = "El campo ISBN es obligatorio y no puede estar vacío")
     private String isbn;
-    private String titulo;
-    private generoLiterario genero;
 
+    @NotBlank(message = "El campo título es obligatorio y no puede estar vacío")
+    private String titulo;
+
+    @NotNull(message = "El campo género literario es obligatorio")
+    private GeneroLiterario genero;
+
+    @Min(value = 1900, message = "El año de publicación debe ser mayor o igual a 1900")
     private int añoPublicacion;
 
+    @Min(value = 1, message = "El libro debe contener al menos 1 página")
     private int numeroPaginas;
+
+    @Min(value = 0, message = "El precio no puede ser negativo")
     private double precio;
+
     private Boolean disponible = true;
 
     // construtor vacio
@@ -23,7 +37,7 @@ public class Libro {
     }
     // construtor normal 
     
-    public Libro(String isbn, String titulo, generoLiterario genero, int añoPublicacion, int numeroPaginas,
+    public Libro(String isbn, String titulo, GeneroLiterario genero, int añoPublicacion, int numeroPaginas,
             double precio, Boolean disponible) {
         this.isbn = isbn;
         this.titulo = titulo;
@@ -54,12 +68,12 @@ public class Libro {
         this.titulo = titulo;
     }
 
-    public generoLiterario getGenero() {
+    public GeneroLiterario getGenero() {
         return genero;
     }
 
     
-    public void setGenero(generoLiterario genero) {
+    public void setGenero(GeneroLiterario genero) {
         this.genero = genero;
     }
 

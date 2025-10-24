@@ -3,7 +3,7 @@ package com.devsenior.luistriana.leer_mas.service;
 import java.util.ArrayList;
 import java.util.LinkedHashSet;
 import java.util.List;
-import java.util.Optional;
+
 import java.util.Set;
 
 import org.springframework.stereotype.Service;
@@ -22,7 +22,7 @@ public class LibreriaImpl implements Libreria {
     public void agregarLibro(Libro libro) {
         listasLibros.add(libro);
 
-        throw new UnsupportedOperationException("Unimplemented method 'agregarLibro'");
+       
     }
 
     @Override
