@@ -5,20 +5,23 @@ import java.util.List;
 import com.devsenior.luistriana.leer_mas.model.entity.Libro;
 
 public interface Libreria {
- // AGREGAR UN NUEVO LIBRO 
+  // AGREGAR UN NUEVO LIBRO
 
- void agregarLibro(Libro libro);
+  void agregarLibro(Libro libro);
 
- // consultar todos los libros 
+  // consultar todos los libros
   List<Libro> todosLosLibros();
   // buscar libro por isbn
 
   Libro buscarLibroPorIsbn(String isbn);
 
-  // actualizar informaicion de un libro 
+  // actualizar informaicion de un libro
 
-  void actualizarLibro(Libro libro);
+  void actualizarLibro(String isbn, Libro libro);
 
   // eliminar un libro
-  void eliminarLibro(Libro libro);
+  void eliminarLibro(String isbn);
+
+  // metodo para actualizar parcialmente
+  void actualizarLibroParcialmente(String isbn, Libro libro);
 }
