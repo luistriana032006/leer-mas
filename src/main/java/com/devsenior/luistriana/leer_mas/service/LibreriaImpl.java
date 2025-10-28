@@ -41,10 +41,11 @@ public class LibreriaImpl implements Libreria {
 
     @Override
     public void actualizarLibro(String isbn, Libro libroactualizado) {
-        buscarLibroPorIsbn(isbn);
-        listasLibros.remove(libroactualizado);
+        Libro libroExistente = buscarLibroPorIsbn(isbn); // buscar el original 
 
-        listasLibros.add(libroactualizado);
+        listasLibros.remove(libroExistente); // remover usando el encontrado
+        libroactualizado.setIsbn(isbn); // nos aseguramos que el isbn no cambia
+        listasLibros.add(libroactualizado); // agregar el reemplazo 
 
     }
 
