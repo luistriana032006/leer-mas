@@ -20,3 +20,26 @@ Content-Type: application/json
   "disponible": true
 }
 
+### peticiones 3- actualizar un libro completo 
+PUT http://localHost:8080/api/libreria/actualizar/libro/ABCDEFGH123
+Content-Type: application/json
+
+{
+
+"isbn": "ABCDEFGH123",
+  "titulo": "Don Quijote de la Mancha",
+  "genero": "FICCION",
+  "añoPublicacion": 1991,
+  "numeroPaginas": 798,
+  "precio": 45000,
+  "disponible": true
+
+}
+
+### peticion 4- actulizar libro parcialmente 
+PATCH http://localHost:8080/api/libreria/libro/ABCDEFGH123
+Content-Type: application/json
+
+{
+"añoPublicacion": 1992
+}

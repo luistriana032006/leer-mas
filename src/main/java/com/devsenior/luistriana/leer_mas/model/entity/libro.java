@@ -21,13 +21,13 @@ public class Libro {
     private GeneroLiterario genero;
 
     @Min(value = 1900, message = "El año de publicación debe ser mayor o igual a 1900")
-    private int añoPublicacion;
+    private Integer añoPublicacion;
 
     @Min(value = 1, message = "El libro debe contener al menos 1 página")
-    private int numeroPaginas;
+    private Integer numeroPaginas;
 
     @Min(value = 0, message = "El precio no puede ser negativo")
-    private double precio;
+    private Double precio;
 
     private Boolean disponible = true;
 
@@ -77,29 +77,29 @@ public class Libro {
         this.genero = genero;
     }
 
-    public int getAñoPublicacion() {
+    public Integer getAñoPublicacion() {
         return añoPublicacion;
     }
 
     
-    public void setAñoPublicacion(int añoPublicacion) {
+    public void setAñoPublicacion(Integer añoPublicacion) {
         this.añoPublicacion = añoPublicacion;
     }
 
-    public int getNumeroPaginas() {
+    public Integer getNumeroPaginas() {
         return numeroPaginas;
     }
 
    
-    public void setNumeroPaginas(int numeroPaginas) {
+    public void setNumeroPaginas(Integer numeroPaginas) {
         this.numeroPaginas = numeroPaginas;
     }
 
-    public double getPrecio() {
+    public Double getPrecio() {
         return precio;
     }
 
-    public void setPrecio(double precio) {
+    public void setPrecio(Double precio) {
         this.precio = precio;
     }
 
