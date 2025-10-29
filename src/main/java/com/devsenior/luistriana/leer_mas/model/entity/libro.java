@@ -1,6 +1,6 @@
 package com.devsenior.luistriana.leer_mas.model.entity;
 
-import org.springframework.stereotype.Component;
+
 
 import com.devsenior.luistriana.leer_mas.model.GeneroLiterario;
 
@@ -8,7 +8,7 @@ import jakarta.validation.constraints.Min;
 import jakarta.validation.constraints.NotBlank;
 import jakarta.validation.constraints.NotNull;
 
-@Component
+
 public class Libro {
     // atributos de la clase libro
     @NotBlank(message = "El campo ISBN es obligatorio y no puede estar vacío")
