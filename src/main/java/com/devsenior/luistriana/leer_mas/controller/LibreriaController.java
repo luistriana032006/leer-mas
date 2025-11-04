@@ -5,7 +5,7 @@ import org.springframework.web.bind.annotation.RestController;
 
 import com.devsenior.luistriana.leer_mas.model.entity.Libro;
 import com.devsenior.luistriana.leer_mas.service.Libreria;
-import com.devsenior.luistriana.leer_mas.service.LibreriaImpl;
+
 
 import jakarta.validation.Valid;
 
@@ -25,7 +25,7 @@ import org.springframework.web.bind.annotation.PutMapping;
 public class LibreriaController {
     private final Libreria libreria;
 
-    public LibreriaController(LibreriaImpl libreria) {
+    public LibreriaController(Libreria libreria) {
         this.libreria = libreria;
     }
 
